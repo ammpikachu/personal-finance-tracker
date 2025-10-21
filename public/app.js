@@ -76,15 +76,15 @@ async function refreshSummary() {
   if (s.error) return console.error(s.error);
 
   // Summary
-  document.getElementById('totalIncome').innerText = s.total_income.toFixed(2);
-  document.getElementById('totalExpense').innerText = s.total_expense.toFixed(2);
+  document.getElementById('totalIncome').innerText = parseFloat(s.total_income).toFixed(2);
+  document.getElementById('totalExpense').innerText = parseFloat(s.total_expense).toFixed(2);
 
 
   const ulCat = document.getElementById('byCategory');
   ulCat.innerHTML = '';
   (s.by_category || []).forEach(c => {
     const li = document.createElement('li');
-    li.innerText = `${c.category}: ${c.total.toFixed(2)}`;
+    li.innerText = `${c.category}: ${parseFloat(c.total).toFixed(2)}`;
     ulCat.appendChild(li);
   });
 
@@ -94,7 +94,8 @@ async function refreshSummary() {
   txList.innerHTML = '';
   tx.forEach(t => {
     const li = document.createElement('li');
-    li.innerText = `[${t.date}] ${t.type.toUpperCase()} - ${t.description} : ${t.amount.toFixed(2)}`;
+    li.className = t.type;
+    li.innerText = `[${t.date}] ${t.type.toUpperCase()} - ${t.description} : ${parseFloat(t.amount).toFixed(2)}`;
     txList.appendChild(li);
   });
 }
