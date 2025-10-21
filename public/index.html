@@ -1,0 +1,68 @@
+<!-- public/index.html -->
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Personal Finance Tracker</title>
+  <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+  <div class="container">
+    <h1>Personal Finance Tracker</h1>
+
+    <div id="auth">
+      <h2>Register</h2>
+      <input id="reg_name" placeholder="Name">
+      <input id="reg_email" placeholder="Email">
+      <input id="reg_pass" type="password" placeholder="Password">
+      <button id="btnRegister">Register</button>
+
+      <h2>Login</h2>
+      <input id="login_email" placeholder="Email">
+      <input id="login_pass" type="password" placeholder="Password">
+      <button id="btnLogin">Login</button>
+    </div>
+
+    <div id="app" style="display:none;">
+      <div class="top">
+        <div>Welcome, <span id="userName"></span></div>
+        <button id="btnLogout">Logout</button>
+      </div>
+
+      <div class="forms">
+        <div class="card">
+          <h3>Add Income</h3>
+          <input id="income_source" placeholder="Source (salary)">
+          <input id="income_amount" placeholder="Amount" type="number">
+          <input id="income_date" type="date">
+          <button id="btnAddIncome">Add Income</button>
+        </div>
+
+        <div class="card">
+          <h3>Add Expense</h3>
+          <input id="expense_cat" placeholder="Category (food)">
+          <input id="expense_amount" placeholder="Amount" type="number">
+          <input id="expense_date" type="date">
+          <input id="expense_note" placeholder="Note (optional)">
+          <button id="btnAddExpense">Add Expense</button>
+        </div>
+      </div>
+
+      <div class="summary card">
+        <h3>Summary</h3>
+        <div>Total Income: <span id="totalIncome">0.00</span></div>
+        <div>Total Expense: <span id="totalExpense">0.00</span></div>
+        <h4>By Category</h4>
+        <ul id="byCategory"></ul>
+      </div>
+
+      <div class="transactions card">
+        <h3>Recent Transactions</h3>
+        <ul id="txList"></ul>
+      </div>
+    </div>
+  </div>
+
+  <script src="/app.js"></script>
+</body>
+</html>

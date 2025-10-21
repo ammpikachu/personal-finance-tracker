@@ -1,0 +1,10 @@
+/* public/styles.css */
+body { font-family: Arial, sans-serif; background:#f3f4f6; margin:0; padding:20px; }
+.container { max-width:900px; margin:0 auto; }
+h1 { text-align:center; }
+.card { background:white; padding:12px; border-radius:8px; box-shadow:0 1px 3px rgba(0,0,0,0.1); margin:10px 0; }
+.forms { display:flex; gap:12px; }
+.card input { display:block; width:100%; padding:8px; margin:6px 0; box-sizing:border-box; }
+button { padding:8px 12px; cursor:pointer; }
+.top { display:flex; justify-content:space-between; align-items:center; margin-bottom:8px; }
+.transactions ul, .summary ul { list-style:none; padding-left:0; }
